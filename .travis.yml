@@ -1,4 +1,5 @@
 language: go
+go: 1.9
 script: go get github.com/willxm/godict && go test
 notifications:
   email: false
