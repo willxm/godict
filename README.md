@@ -1,4 +1,6 @@
 # English to Chinese translation tools in the command line
+[![Build Status](https://travis-ci.org/willxm/godict.svg?branch=master)](https://travis-ci.org/willxm/godict)
+
 ---
 
 ### config
