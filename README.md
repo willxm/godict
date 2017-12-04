@@ -5,7 +5,7 @@
 go to http://ai.youdao.com/gw.s
 apply for your own app key
 
-replace the key in the file(GOPATH/github.com/willxm/godict/utils.const.go)
+replace the key in the file(GOPATH/github.com/willxm/godict/utils/const.go)
 
 ### install
 ```
