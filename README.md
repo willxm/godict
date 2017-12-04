@@ -1,9 +1,9 @@
-# English to Chinese translation tools in the command line
+English to Chinese translation tools in the command line
+===
 [![Build Status](https://travis-ci.org/willxm/godict.svg?branch=master)](https://travis-ci.org/willxm/godict)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)][license]
 
 [license]: https://github.com/willxm/godict/blob/master/LICENSE
----
 
 ### config
 go to http://ai.youdao.com/gw.s
