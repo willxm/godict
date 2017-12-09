@@ -6,6 +6,7 @@ import (
 	"math/rand"
 	"strings"
 	"time"
+	"unicode"
 )
 
 func Rand(l int) string {
@@ -24,4 +25,13 @@ func MD5(s string) string {
 	has := md5.Sum(data)
 	md5str := fmt.Sprintf("%x", has)
 	return strings.ToUpper(md5str)
+}
+
+func IsChineseChar(str string) bool {
+	for _, r := range str {
+		if unicode.Is(unicode.Scripts["Han"], r) {
+			return true
+		}
+	}
+	return false
 }

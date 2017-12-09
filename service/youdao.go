@@ -44,10 +44,18 @@ type ResponseYoudao struct {
 }
 
 func (y *Youdao) Translate(q string) *ResponseYoudao {
+	var from, to string
+	if utils.IsChineseChar(q) {
+		from = "zh-CHS"
+		to = "EN"
+	} else {
+		from = "EN"
+		to = "ch-CHS"
+	}
 	var ry ResponseYoudao
 	salt := utils.Rand(1)
 	sign := utils.MD5(utils.YOUDAO_APP_ID + q + salt + utils.YOUDAO_APP_KEY)
-	queryUrl := "?q=" + q + "&from=EN&to=zh-CHS" + "&appKey=" + utils.YOUDAO_APP_ID + "&salt=" + salt + "&sign=" + sign
+	queryUrl := "?q=" + q + "&from=" + from + "&to=" + to + "&appKey=" + utils.YOUDAO_APP_ID + "&salt=" + salt + "&sign=" + sign
 	resq, err := http.Get(utils.YOUDAO_TRANSLATE_API + queryUrl)
 	if err != nil {
 		panic(err)
