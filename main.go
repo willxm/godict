@@ -13,12 +13,25 @@ func main() {
 		fmt.Println("please input words")
 		return
 	}
-	q := input[1]
+	q := ""
+	l := len(input)
+	for k, v := range input {
+		if k > 0 {
+			if l-1 == k {
+				q += v
+			} else {
+				q += v + " "
+			}
+		}
+	}
 	var yd service.Youdao
 	result := yd.Translate(q)
-	if len(result.Basic.Explains) < 1 {
+	if len(result.Translation) < 1 {
 		fmt.Println("error words")
 		return
+	}
+	for _, v := range result.Translation {
+		fmt.Println(v)
 	}
 	for _, v := range result.Basic.Explains {
 		fmt.Println(v)

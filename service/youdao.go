@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
+	"net/url"
 
 	"github.com/willxm/godict/utils"
 )
@@ -55,7 +56,7 @@ func (y *Youdao) Translate(q string) *ResponseYoudao {
 	var ry ResponseYoudao
 	salt := utils.Rand(1)
 	sign := utils.MD5(utils.YOUDAO_APP_ID + q + salt + utils.YOUDAO_APP_KEY)
-	queryUrl := "?q=" + q + "&from=" + from + "&to=" + to + "&appKey=" + utils.YOUDAO_APP_ID + "&salt=" + salt + "&sign=" + sign
+	queryUrl := "?q=" + url.QueryEscape(q) + "&from=" + from + "&to=" + to + "&appKey=" + utils.YOUDAO_APP_ID + "&salt=" + salt + "&sign=" + sign
 	resq, err := http.Get(utils.YOUDAO_TRANSLATE_API + queryUrl)
 	if err != nil {
 		panic(err)
