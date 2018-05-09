@@ -32,4 +32,7 @@ n. (Good)人名；(英)古德；(瑞典)戈德
 $ godict 你好
 hello
 hi
+
+$ godict golang is the best language
+golang是最好的语言。
 ```
